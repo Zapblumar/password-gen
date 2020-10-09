@@ -21,7 +21,6 @@ if(passwordUppercase === true){
   parseInt(upperCase);
   passwordUppercase =  upperCaseChar[upperCase];
   generatePassword = (generatePassword + passwordUppercase);
-  passwordLength = (passwordLength - 1) 
 
 }
 console.log (passwordUppercase);
@@ -33,7 +32,6 @@ if(passwordLowercase === true){
   parseInt(lowerCase);
   passwordLowercase = lowerCaseChar[lowerCase];
   generatePassword = (generatePassword + passwordLowercase);
-  passwordLength = (passwordLength - 1) 
 }
 console.log(passwordLowercase);
 var passwordNumber = window.confirm("Press OK for numbers?");
@@ -43,8 +41,7 @@ if(passwordNumber === true){
   var number = (Math.floor(Math.random()*(10)));
   parseInt(number);
   passwordNumber = numericChar[number];
-  generatePassword = (generatePassword + passwordNumber);
-  passwordLength = (passwordLength - 1) 
+  generatePassword = (generatePassword + passwordNumber); 
 }
 console.log(passwordNumber);
 var passwordCharacter = window.confirm("Press OK for special characters?");
@@ -55,7 +52,13 @@ if(passwordCharacter === true){
   parseInt(caseArray);
   passwordCharacter = specialChar[caseArray];
   generatePassword = (generatePassword + passwordCharacter);
-  passwordLength = (passwordLength - 1) 
+}
+  var middleLength = passwordLength - 4;
+  for (var n = 0; n < middleLength; n = n + 1) {
+    var passCode = (Math.floor(Math.random()*(9)));
+    parseInt(passCode)
+    generatePassword = (generatePassword + numericChar[passCode]);
+  
 }
 console.log(passwordCharacter);
 console.log(generatePassword)
@@ -70,7 +73,7 @@ while (passwordLength > 0){
 }; */
 
  /*var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector("#password");{
 
   passwordText.value = password;
   
