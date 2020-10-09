@@ -6,6 +6,7 @@ var generateBtn = document.querySelector("#generate");
 var generatePassword = '';
 // Write password to the #password input
 function writePassword() {
+  document.querySelector("#password").value = "";
   var passwordLength = window.prompt("enter a digit between 8 to 128 number. If outside parameters, or left blank will make random size!","8");
   if (passwordLength < 8 || passwordLength > 128){
   var passwordLength =(Math.floor(Math.random() *(129 - 8))) + 8;
@@ -21,9 +22,8 @@ if(passwordUppercase === true){
   parseInt(upperCase);
   passwordUppercase =  upperCaseChar[upperCase];
   generatePassword = (generatePassword + passwordUppercase);
-}
-else{
-  passwordLength = passwordLength + 1;
+
+  passwordLength = passwordLength - 1;
 }
 console.log (passwordUppercase);
 var passwordLowercase = window.confirm("Press OK for lowercase numbers?");
@@ -34,9 +34,8 @@ if(passwordLowercase === true){
   parseInt(lowerCase);
   passwordLowercase = lowerCaseChar[lowerCase];
   generatePassword = (generatePassword + passwordLowercase);
-}
-else{
-  passwordLength = passwordLength + 1;
+
+  passwordLength = passwordLength - 1;
 }
 console.log(passwordLowercase);
 var passwordNumber = window.confirm("Press OK for numbers?");
@@ -47,9 +46,8 @@ if(passwordNumber === true){
   parseInt(number);
   passwordNumber = numericChar[number];
   generatePassword = (generatePassword + passwordNumber); 
-}
-else{
-  passwordLength = passwordLength + 1;
+
+  passwordLength = passwordLength - 1;
 }
 console.log(passwordNumber);
 var passwordCharacter = window.confirm("Press OK for special characters?");
@@ -60,15 +58,14 @@ if(passwordCharacter === true){
   parseInt(caseArray);
   passwordCharacter = specialChar[caseArray];
   generatePassword = (generatePassword + passwordCharacter);
+
+  passwordLength = passwordLength - 1;
 }
-else{
-  passwordLength = passwordLength + 1;
-}
-  var middleLength = passwordLength - 4;
+  var middleLength = passwordLength;
     for (var n = 0; n < middleLength; n = n + 1) {
-    var passCode = (Math.floor(Math.random()*(9)));
+    var passCode = (Math.floor(Math.random()*(26)));
     parseInt(passCode)
-    generatePassword = (generatePassword + numericChar[passCode]);
+    generatePassword = (generatePassword + lowerCaseChar[passCode]);
   
 }
 //console.log(passwordCharacter);
