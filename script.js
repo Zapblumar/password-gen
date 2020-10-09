@@ -7,7 +7,7 @@ var generatePassword = '';
 // Write password to the #password input
 function writePassword() {
   var passwordLength = window.prompt("enter a digit between 8 to 128 number. If outside parameters, or left blank will make random size!","8");
-  if (passwordLength < 8 || passwordLength > 128){
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)){
   var passwordLength =(Math.floor(Math.random() *(129 - 8))) + 8;
   parseInt(passwordLength);
   }
