@@ -6,7 +6,6 @@ var generateBtn = document.querySelector("#generate");
 var generatePassword = '';
 // Write password to the #password input
 function writePassword() {
-  document.querySelector("#password").value = "";
   var passwordLength = window.prompt("enter a digit between 8 to 128 number. If outside parameters, or left blank will make random size!","8");
   if (passwordLength < 8 || passwordLength > 128){
   var passwordLength =(Math.floor(Math.random() *(129 - 8))) + 8;
